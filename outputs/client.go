@@ -113,6 +113,10 @@ func (c *Client) Post(payload interface{}) error {
 		req.Header.Add("Authorization", "GenieKey "+c.Config.Opsgenie.APIKey)
 	}
 
+	if c.Config.Webhook.AuthenticationToken != "" {
+		req.Header.Add("Authorization", c.Config.Webhook.AuthenticationToken)
+	}
+
 	req.Header.Add("User-Agent", "Falcosidekick")
 
 	resp, err := client.Do(req)

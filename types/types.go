@@ -170,8 +170,9 @@ type opsgenieOutputConfig struct {
 }
 
 type webhookConfig struct {
-	Address         string
-	MinimumPriority string
+	Address             string
+	AuthenticationToken string
+	MinimumPriority     string
 }
 
 type statsdConfig struct {
